@@ -9,9 +9,12 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@fluentui/react": "^8.121.13",
+    "@fluentui/react-components": "^9.56.5",
     "@react-router/node": "^7.0.2",
     "@react-router/serve": "^7.0.2",
     "isbot": "^5.1.17",
+    "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.0.2"
@@ -28,5 +31,20 @@
     "vite": "^5.4.11",
     "vite-plugin-pwa": "^0.21.1",
     "vite-tsconfig-paths": "^5.1.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
