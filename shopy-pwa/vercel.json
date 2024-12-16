@@ -11,9 +11,5 @@
       "use": "@vercel/next"
     }
   ],
-  "build": {
-    "env": {
-      "NODEJS_RUNTIME": "nodejs18.x"
-    }
-  }
+  "rootDirectory": "shopy-pwa"
 } 

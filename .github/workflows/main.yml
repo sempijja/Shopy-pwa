@@ -67,7 +67,7 @@ jobs:
       
     - name: Deploy to Vercel
       working-directory: ./shopy-pwa
-      run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }}
+      run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --cwd . --yes
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
