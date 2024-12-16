@@ -22,18 +22,23 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
+      working-directory: ./shopy-pwa
       run: npm ci
       
     - name: Run linter
+      working-directory: ./shopy-pwa
       run: npm run lint
       
     - name: Run tests
+      working-directory: ./shopy-pwa
       run: npm test
       
     - name: Build application
+      working-directory: ./shopy-pwa
       run: npm run build
       
     - name: Run security audit
+      working-directory: ./shopy-pwa
       run: npm audit --audit-level=moderate
 
   deploy:
@@ -49,14 +54,18 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
+        cache-dependency-path: './shopy-pwa/package-lock.json'
         
     - name: Install dependencies
+      working-directory: ./shopy-pwa
       run: npm ci
       
     - name: Build application
+      working-directory: ./shopy-pwa
       run: npm run build
       
     - name: Deploy to Vercel
+      working-directory: ./shopy-pwa
       run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
