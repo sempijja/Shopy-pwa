@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       working-directory: ./shopy-pwa
-      run: npm ci
+      run: npm ci --legacy-peer-deps
       
     - name: Run linter
       working-directory: ./shopy-pwa
@@ -59,7 +59,7 @@ jobs:
         
     - name: Install dependencies
       working-directory: ./shopy-pwa
-      run: npm ci
+      run: npm ci --legacy-peer-deps
       
     - name: Build application
       working-directory: ./shopy-pwa
