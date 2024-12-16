@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       working-directory: ./shopy-pwa
-      run: npm ci --legacy-peer-deps
+      run: npm install
       
     - name: Run linter
       working-directory: ./shopy-pwa
@@ -59,7 +59,7 @@ jobs:
         
     - name: Install dependencies
       working-directory: ./shopy-pwa
-      run: npm ci --legacy-peer-deps
+      run: npm install
       
     - name: Build application
       working-directory: ./shopy-pwa
@@ -67,7 +67,7 @@ jobs:
       
     - name: Deploy to Vercel
       working-directory: ./shopy-pwa
-      run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --yes --cwd . --build-env NODEJS_RUNTIME=nodejs18.x
+      run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }}
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
