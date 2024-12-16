@@ -2,7 +2,7 @@
   "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm ci",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "builds": [
@@ -10,5 +10,10 @@
       "src": "package.json",
       "use": "@vercel/next"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "NODEJS_RUNTIME": "nodejs18.x"
+    }
+  }
 } 
