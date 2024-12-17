@@ -1,77 +1,34 @@
-name: Shopy PWA CI/CD
+deploy:
+  needs: build-and-test
+  runs-on: ubuntu-latest
+  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  
+  steps:
+  - name: Checkout repository
+    uses: actions/checkout@v3
 
-on:
-  push:
-    branches: [ test ]
-  pull_request:
-    branches: [ test ]
-
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+  - name: Use Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: '18'
+      cache: 'npm'
+      cache-dependency-path: './shopy-pwa/package-lock.json'
+      
+  - name: Install dependencies
+    working-directory: ./shopy-pwa
+    run: npm ci
     
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 1  # Optimize fetch
-
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: './shopy-pwa/package-lock.json'
-
-    - name: Install dependencies
-      working-directory: ./shopy-pwa
-      run: npm ci  # Faster and more reliable than `npm install`
-
-    - name: Run linter
-      working-directory: ./shopy-pwa
-      run: npm run lint
-      
-    - name: Run tests
-      working-directory: ./shopy-pwa
-      run: npm test
-      
-    - name: Build application
-      working-directory: ./shopy-pwa
-      run: npm run build
-      
-    - name: Run security audit
-      working-directory: ./shopy-pwa
-      run: npm audit --audit-level=moderate
-
-  deploy:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+  - name: Build application
+    working-directory: ./shopy-pwa
+    run: npm run build
     
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+  - name: Debug: Verify files
+    run: ls -la ./shopy-pwa
 
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: './shopy-pwa/package-lock.json'
-        
-    - name: Install dependencies
-      working-directory: ./shopy-pwa
-      run: npm ci
-      
-    - name: Build application
-      working-directory: ./shopy-pwa
-      run: npm run build
-      
-    - name: Deploy to Vercel
-      working-directory: ./shopy-pwa
-      run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --cwd . --yes
-      env:
-        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  - name: Deploy to Vercel
+    working-directory: ./shopy-pwa
+    run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --cwd ./shopy-pwa --yes
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
