@@ -2,34 +2,43 @@ deploy:
   needs: build-and-test
   runs-on: ubuntu-latest
   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-  
+
   steps:
-  - name: Checkout repository
-    uses: actions/checkout@v3
+    # 1. Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v4 # Updated to the latest version
 
-  - name: Use Node.js
-    uses: actions/setup-node@v3
-    with:
-      node-version: '18'
-      cache: 'npm'
-      cache-dependency-path: './shopy-pwa/package-lock.json'
-      
-  - name: Install dependencies
-    working-directory: ./shopy-pwa
-    run: npm ci
-    
-  - name: Build application
-    working-directory: ./shopy-pwa
-    run: npm run build
-    
-  - name: Debug: Verify files
-    run: ls -la ./shopy-pwa
+    # 2. Set up Node.js environment
+    - name: Use Node.js
+      uses: actions/setup-node@v4 # Updated to the latest version
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: './shopy-pwa/package-lock.json'
 
+    # 3. Install dependencies (use npm ci for clean, faster install)
+    - name: Install dependencies
+      working-directory: ./shopy-pwa
+      run: npm ci
+
+    # 4. Build the application
+    - name: Build application
+      working-directory: ./shopy-pwa
+      run: npm run build
+
+    # 5. Debug step (optional but useful for deployment failures)
+    - name: Debug: Verify files
+      working-directory: ./shopy-pwa
+      run: |
+        echo "Current directory contents:"
+        ls -la
+
+    # 6. Deploy to Vercel
     - name: Deploy to Vercel
-    working-directory: ./shopy-pwa
-    run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --cwd ./shopy-pwa --yes
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  
+      working-directory: ./shopy-pwa
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      run: |
+        npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --cwd ./shopy-pwa --yes
