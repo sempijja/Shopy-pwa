@@ -2,18 +2,20 @@ name: Shopy PWA CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ test ]
   pull_request:
-    branches: [ main ]
+    branches: [ test ]
+
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
       with:
-        fetch-depth: 0  # Fetch all history for all branches and tags
+        fetch-depth: 1  # Optimize fetch
 
     - name: Use Node.js
       uses: actions/setup-node@v3
@@ -24,8 +26,8 @@ jobs:
 
     - name: Install dependencies
       working-directory: ./shopy-pwa
-      run: npm install
-      
+      run: npm ci  # Faster and more reliable than `npm install`
+
     - name: Run linter
       working-directory: ./shopy-pwa
       run: npm run lint
@@ -45,11 +47,12 @@ jobs:
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
     
     steps:
-    - uses: actions/checkout@v3
-    
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
@@ -59,7 +62,7 @@ jobs:
         
     - name: Install dependencies
       working-directory: ./shopy-pwa
-      run: npm install
+      run: npm ci
       
     - name: Build application
       working-directory: ./shopy-pwa
@@ -72,4 +75,3 @@ jobs:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-
