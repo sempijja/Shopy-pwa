@@ -24,14 +24,18 @@ deploy:
     # 4. Build the application
     - name: Build application
       working-directory: ./shopy-pwa
+      env:
+        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}  # Add any needed env variables
       run: npm run build
 
     # 5. Debug step (optional but useful for deployment failures)
-    - name: Debug: Verify files
+    - name: Debug - Verify files
       working-directory: ./shopy-pwa
       run: |
         echo "Current directory contents:"
         ls -la
+        echo "src/components contents:"
+        ls -la src/components
 
     # 6. Deploy to Vercel
     - name: Deploy to Vercel
@@ -41,4 +45,4 @@ deploy:
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       run: |
-        npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --cwd ./shopy-pwa --yes
+        npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --yes
