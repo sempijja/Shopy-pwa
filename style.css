@@ -23,6 +23,7 @@ h1, h2 {
     color: white;
 }
 
+/* global components tht are designed once to control all- start */
 button {
     display: flex;
     width: 100%;
@@ -41,6 +42,31 @@ button {
     outline: none;
 }
 
+/* Global text input styles */
+.text-input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: "SF Pro Text", sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+
+    /* Remove default styles */
+    background: none;
+    box-shadow: none;
+}
+
+.text-input:focus {
+    border-color: #8B3DC3;
+}
+/* global components tht are designed once to control all- end */
+
+
+/* onboarding screen1 (login/signup) components start */
 .whatsapp-button {
     color: #8B3DC3;
     background-color: rgba(245, 222, 179, 0);
@@ -74,6 +100,28 @@ button {
     align-self: stretch;
     height: 100%;
 }
+/* onboarding screen1 (login/signup) components end */
+
+
+
+/* Whtsapp verification screen components start */
+.form-number{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+
+.no-background {
+    background-image: none;
+    background-color: #ffffff; /* Optional: Set a background color */
+}
+/* Whtsapp verification screen components end */
+
+
 
 /* Media queries for responsiveness */
 @media (max-width: 600px) {

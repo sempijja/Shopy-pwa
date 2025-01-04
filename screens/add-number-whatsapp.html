@@ -4,34 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopy</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="manifest.json">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
 </head>
-<body>
-    <div class="container-onbaord">
+<body class="no-background">
+  <!--The top most layer labelled as "container in Figma"-->
+    <div style="display: flex;
+    padding: 0px var(--Size-160, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;">
 
         <div class="onboard-text">
-            <h1>Enter your WhatApp phone number</h1>
-            <h3>We will send  you a verification code to this phone number</h3>
+            <h2 style="color: black;">Enter your WhatsApp phone number</h2>
+            <h3>We will send you a verification code to this phone number</h3>
         </div>
 
-        <div class="onboard-buttons">
-            <button class="google-button">Continue with Google</button>
-            <button class="whatsapp-button">Continue with WhatsApp</button>
+        <div class="form-number">
+            <input type="text" class="text-input" placeholder="Enter your phone number">
+            <button>Verify</button>
         </div>
     </div>
 
-    
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            navigator.serviceWorker.register('../service-worker.js').then(registration => {
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, error => {
               console.log('ServiceWorker registration failed: ', error);
             });
           });
         }
-      </script>
+    </script>
 </body>
 </html>
