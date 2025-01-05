@@ -12,17 +12,12 @@
     <link rel="manifest" href="../favicon_io/site.webmanifest">
 </head>
 <body class="no-background">
+  
   <!--The top most layer labelled as "container in Figma"-->
-    <div style="display: flex;
-    padding: 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 0 0;
-    align-self: stretch;">
-
+    <div class="container-onbaord">
         <div class="onboard-text">
-            <h2 style="color: black;">Enter your WhatsApp phone number</h2>
-            <h3>We will send you a verification code to this phone number</h3>
+            <h2>Enter your WhatsApp phone number</h2>
+            <h4>We will send you a verification code to this phone number</h4>
         </div>
 
         <div class="form-number">
@@ -41,6 +36,10 @@
             });
           });
         }
+        // function to navigate to next page on click
+        document.getElementById('verify-number').addEventListener('click', function() {
+      window.location.href = '../screens/number-whatsapp-verify.html'; // target HTML file
+  });
     </script>
     <script src="../navigation.js"></script>
 </body>

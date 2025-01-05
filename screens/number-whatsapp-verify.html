@@ -21,13 +21,13 @@
     align-self: stretch;">
 
         <div class="onboard-text">
-            <h2 style="color: black;">Verify your WhatsApp phone number</h2>
-            <h3>Enter the code sent to your number</h3>
+            <h2>Verify your WhatsApp phone number</h2>
+            <h4>Enter the code sent to your number</h4>
         </div>
 
         <div class="form-number">
             <input type="text" class="text-input" placeholder="Enter 6 digit code">
-            <button id="verify-number">Verify</button>
+            <button id="verify-number-code">Verify</button>
         </div>
     </div>
 
@@ -41,6 +41,10 @@
             });
           });
         }
+// function to navigate to next page on click
+        document.getElementById('verify-number-code').addEventListener('click', function() {
+      window.location.href = '../screens/store-onboard.html'; // target HTML file
+  });
     </script>
 </body>
 </html>
