@@ -87,6 +87,85 @@ button {
     outline: none;
 }
 
+
+body {
+    font-family: Arial, sans-serif;
+  }
+
+  /* Progress steps */
+  /*A progress steps component is a series of milestones that provides an overview of a complex process or multistep flow, like a transportation itinerary or account creation flow. Progress steps help guide and encourage users as they use our apps. */
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+  }
+  
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0; /* Default line color */
+    z-index: 0;
+  }
+  
+  .step.completed:not(:last-child)::after {
+    background-color: black; /* Active line color */
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Default circle color */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .step.completed .circle {
+    background-color: black;
+  }
+  
+  .step.active .circle {
+    background-color: black;
+    color: white;
+  }
+  
+  .label {
+    margin-top: 8px;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+  }
+  
+  .step.active .label {
+    font-weight: bold;
+  }
+  
+  .step.completed .label {
+    font-weight: bold;
+  }
+  
+
+
 /* Global text input styles */
 .text-input {
     width: 100%;
@@ -164,6 +243,7 @@ button {
     background-color: #ffffff; 
 }
 /* Whtsapp verification screen components end */
+
 
 
 
