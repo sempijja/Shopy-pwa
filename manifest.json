@@ -1,19 +1,24 @@
 {
     "name": "Shopy",
     "short_name": "Shopy",
-    "start_url": ".",
+    "start_url": "www.shopy.com",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007bff",
     "description": "Set up ypur store in seconds and start earning",
     "icons": [
       {
-        "src": "/assets/icons/icon-192x192.png",
+        "src": "favicon_io/android-chrome-192x192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/assets/icons/icon-512x512.png",
+        "src": "favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+      {
+        "src": "favicon_io/apple-touch-icon.png",
         "sizes": "512x512",
         "type": "image/png"
       }

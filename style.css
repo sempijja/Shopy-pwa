@@ -98,7 +98,7 @@ button {
     font-size: 16px;
     font-family: "SF Pro Text", sans-serif;
     outline: none;
-    transition: border-color 0.3s;
+    transition: 0.3s;
 
     /* Remove default styles */
     background: none;
@@ -147,8 +147,6 @@ button {
     height: auto;
 }
 /* onboarding screen1 (login/signup) components end */
-
-
 
 /* Whtsapp verification screen components start */
 .form-number{
