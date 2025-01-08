@@ -144,8 +144,8 @@ img {
     background-color: black;
     color: white;
   }
+  /* Progress steps end */
 
-  
 
 
 /* Global text input styles */
@@ -220,9 +220,46 @@ img {
 }
 /* Whtsapp verification screen components end */
 
+/* Store onbard-industry */
+.store-onboard-industry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
 
+.store-onboard-industry-options{
+  display: flex;
+  padding: 12px 0px;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  gap: 12px 24px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
 
+.carousel-button{
+  display: flex;
+  width: 88px;
+  height: 100px;
+  padding: 8px 2px;
+  flex-direction: column;
+  align-items: center;
+}
 
+.carousel-button-label{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lucide-icon{
+  color: #808080;
+  flex-shrink: 0;
+}
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
     body {
