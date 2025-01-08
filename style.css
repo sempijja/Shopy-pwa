@@ -4,16 +4,12 @@ html, body {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family: "SF Pro Text";
+    font-family: "SF Pro Display", "apple-system, BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
     line-height: 22px; /* 129.412% */
     letter-spacing: -0.43px;
-    background-image: url('/assests/images/Radiant\ Smile\ in\ Black\ and\ White.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,11 +21,11 @@ h1 {
     text-align: center;
     
     /* iOS/Display */
-    font-family: "SF Pro Display";
+    font-family: "SF Pro Display", "apple-system, BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 60px;
     font-style: normal;
     font-weight: 700;
-    line-height: 70px; /* 116.667% */
+    line-height: 20px; /* 116.667% */
     letter-spacing: 0.26px;
 }
 h2 {
@@ -37,8 +33,8 @@ h2 {
     text-align: center;
     
     /* iOS/Title 2 */
-    font-family: "SF Pro Display";
-    font-size: 22px;
+    font-family: "SF Pro Display", "apple-system, BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
+    font-size: 30px;
     font-style: normal;
     font-weight: 600;
     line-height: 28px; /* 127.273% */
@@ -48,7 +44,7 @@ h2 {
 h3{
     color: black;
     text-align: center;
-    font-family: "SF Pro Display";
+    font-family: "SF Pro Display", "apple-system, BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
@@ -59,11 +55,11 @@ h3{
 h4{
     color: black;
     text-align: center;
-    font-family: "SF Pro Display";
+    font-family: "SF Pro Display", "apple-system, BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
-    line-height: 28px; /* 127.273% */
+    line-height: 24px; /* 127.273% */
     letter-spacing: -0.26px;
 }
 
@@ -76,7 +72,7 @@ button {
     align-items: center;
     align-self: stretch;
     color: white;
-    border-radius: 12px;
+    border-radius: 24px;
     background: #8B3DC3;
     gap: 8px;
     height: 52px;
@@ -87,10 +83,10 @@ button {
     outline: none;
 }
 
-
-body {
-    font-family: Arial, sans-serif;
-  }
+img {
+  width: 100%;
+  height: auto;
+}
 
   /* Progress steps */
   /*A progress steps component is a series of milestones that provides an overview of a complex process or multistep flow, like a transportation itinerary or account creation flow. Progress steps help guide and encourage users as they use our apps. */
@@ -123,12 +119,12 @@ body {
   }
   
   .step.completed:not(:last-child)::after {
-    background-color: black; /* Active line color */
+    background-color: #8B3DC3; /* Active line color */
   }
   
   .circle {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background-color: #e0e0e0; /* Default circle color */
     color: #fff;
@@ -141,27 +137,12 @@ body {
   }
   
   .step.completed .circle {
-    background-color: black;
+    background-color: #8B3DC3;
   }
   
   .step.active .circle {
     background-color: black;
     color: white;
-  }
-  
-  .label {
-    margin-top: 8px;
-    font-size: 12px;
-    text-align: center;
-    color: #000;
-  }
-  
-  .step.active .label {
-    font-weight: bold;
-  }
-  
-  .step.completed .label {
-    font-weight: bold;
   }
   
 
@@ -220,7 +201,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 16px;
+    gap: 8px;
     flex: 1 0 0;
     align-self: stretch;
     height: auto;
@@ -235,12 +216,6 @@ body {
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
-}
-
-
-.no-background {
-    background-image: none;
-    background-color: #ffffff; 
 }
 /* Whtsapp verification screen components end */
 
