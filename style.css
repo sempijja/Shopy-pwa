@@ -13,6 +13,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -197,15 +198,18 @@ img {
     align-self: stretch;
 }
 
-.container-onbaord {
+.container-onboard {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
     gap: 8px;
     flex: 1 0 0;
     align-self: stretch;
     height: auto;
+    padding: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 /* onboarding screen1 (login/signup) components end */
 
@@ -260,33 +264,88 @@ img {
   color: #808080;
   flex-shrink: 0;
 }
+
+
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
-    body {
-        font-size: 15px;
-    }
+  body {
+      font-size: 15px;
+  }
 
-    button {
-        height: 48px;
-        font-size: 15px;
-    }
+  button {
+      height: 48px;
+      font-size: 15px;
+  }
 
-    .container-onbaord {
-        padding: 10px;
-    }
+  .container-onboard {
+      padding: 10px;
+      height: auto;
+  }
+
+  h1 {
+      font-size: 50px;
+  }
+
+  h2 {
+      font-size: 25px;
+  }
+
+  h3 {
+      font-size: 24px;
+  }
+
+  h4 {
+      font-size: 18px;
+  }
+
+  .progress-steps {
+      max-width: 100%;
+  }
+
+  .circle {
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+  }
 }
 
 @media (max-width: 400px) {
-    body {
-        font-size: 14px;
-    }
+  body {
+      font-size: 14px;
+  }
 
-    button {
-        height: 44px;
-        font-size: 14px;
-    }
+  button {
+      height: 44px;
+      font-size: 14px;
+  }
 
-    .container-onbaord {
-        padding: 8px;
-    }
+  .container-onboard {
+      padding: 8px;
+  }
+
+  h1 {
+      font-size: 40px;
+  }
+
+  h2 {
+      font-size: 20px;
+  }
+
+  h3 {
+      font-size: 20px;
+  }
+
+  h4 {
+      font-size: 16px;
+  }
+
+  .progress-steps {
+      max-width: 100%;
+  }
+
+  .circle {
+      width: 24px;
+      height: 24px;
+      font-size: 10px;
+  }
 }
