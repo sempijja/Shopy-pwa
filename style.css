@@ -74,15 +74,15 @@ button {
     align-items: center;
     align-self: stretch;
     color: white;
-    border-radius: 24px;
+    border-radius: 12px;
     background: #8B3DC3;
     gap: 8px;
     height: 52px;
-    color: var(--Neutral-Foreground-on-Color-Rest, #FFF);
     text-align: center;
     border: none;
     box-shadow: none;
     outline: none;
+    padding: 0px 20px;
 }
 
 img {
@@ -100,6 +100,7 @@ img {
     max-width: 600px;
     margin: 20px auto;
     height: auto;
+    flex-direction: row;
   }
   
   .step {
@@ -108,6 +109,7 @@ img {
     align-items: center;
     position: relative;
     flex: 1;
+    flex-direction: row;
   }
   
   .step:not(:last-child)::after {
@@ -172,7 +174,7 @@ img {
 .text-input:focus {
     border-color: #8B3DC3;
 }
-/* global components tht are designed once to control all- end */
+/* global components that are designed once to control all- end */
 
 
 /* onboarding screen1 (login/signup) components start */
@@ -253,6 +255,7 @@ img {
   padding: 8px 2px;
   flex-direction: column;
   align-items: center;
+  border-radius: 12px;
 }
 
 .carousel-button-label{
@@ -261,11 +264,74 @@ img {
   align-items: flex-start;
 }
 
+.carousel-button-label p {
+    color: var(--Neutral-Foreground-1-Rest, #242424);
+    text-align: center;
+    
+    /* iOS/Caption 2 */
+    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}
+
 .lucide-icon{
   color: #808080;
   flex-shrink: 0;
 }
 
+#verify-number-code {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: #8B3DC3; /* Adjust the background color as needed */
+    color: white;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+/* Selected state for carousel buttons */
+.carousel-button.selected {
+    border: 2px solid #8B3DC3; /* Highlight selected button */
+}
+
+/* Notification banner styles */
+.notification-banner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffcc00; /* Warning color */
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    z-index: 1000;
+    animation: slideDown 0.5s forwards, slideUp 0.5s 2s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 0;
+    }
+    to {
+        top: -50px;
+    }
+}
 
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
