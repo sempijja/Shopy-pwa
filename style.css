@@ -1000,7 +1000,18 @@ img {
 
   /* Progress steps */
   /*A progress steps component is a series of milestones that provides an overview of a complex process or multistep flow, like a transportation itinerary or account creation flow. Progress steps help guide and encourage users as they use our apps. */
-.progress-steps {
+  .progress-steps-container{
+    display: flex;
+    padding-top: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    margin-top: 80%;
+}
+
+  .progress-steps {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1008,16 +1019,19 @@ img {
     max-width: 600px;
     margin: 20px auto;
     height: auto;
+    outline: 1px solid red !important;
   }
   
   .step {
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     flex: 1;
-    flex-direction: row;
     justify-content: center;
+    outline: 1px solid red !important;
   }
   
   .step:not(:last-child)::after {
@@ -1025,10 +1039,12 @@ img {
     position: absolute;
     top: 50%;
     right: -50%;
-    width: 100%;
+    transform: translateY(-50%);
+    width: 100%; /* Subtracting circle width */;
     height: 2px;
     background-color: #e0e0e0; /* Default line color */
     z-index: 0;
+    outline: 1px solid red !important;
   }
   
   .step.completed:not(:last-child)::after {
@@ -1040,13 +1056,14 @@ img {
     height: 36px;
     border-radius: 50%;
     background-color: #e0e0e0; /* Default circle color */
-    color: #fff;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     font-weight: bold;
     z-index: 1;
+    outline: 1px solid red !important;
   }
   
   .step.completed .circle {
@@ -1109,6 +1126,7 @@ img {
 
 .container-onboard {
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -1133,6 +1151,7 @@ img {
 /* Whtsapp verification screen components end */
 
 /* Store onbard-industry */
+
 .store-onboard-industry {
   display: flex;
   flex-direction: column;
