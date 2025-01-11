@@ -50,12 +50,59 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ selectedOptions })
         })
         .then(response => response.json())
-        .then(data => {
-            // Navigate to the next screen
-            window.location.href = '/next-screen';
-        })
         .catch(error => {
             console.error('Error:', error);
+        })
+        .finally(() => {
+            // Navigate to the next screen regardless of the fetch result
+            window.location.href = 'screens/store-onboard-add-physical-products.html';
         });
+    });
+});
+
+// Upload image notification      
+document.getElementById('product-image-upload').addEventListener('change', (event) => {
+    if (event.target.files.length > 0) {
+        const uploadBanner = document.getElementById('upload-notification-banner');
+        uploadBanner.style.display = 'block';
+        setTimeout(() => {
+            uploadBanner.style.display = 'none';
+        }, 2500);
+    }
+});
+
+$(document).ready(function() {
+    $('#product-image-upload').on('change', function(event) {
+        const files = event.target.files;
+        const previewContainer = $('#image-preview-container');
+        const fileUploadText = $('#file-upload-text');
+        previewContainer.empty(); // Clear previous previews
+
+        if (files.length > 5) {
+            alert('You can only upload a maximum of 5 images.');
+            return;
+        }
+
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = $('<img>').attr('src', e.target.result).addClass('image-preview');
+                previewContainer.append(img);
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        if (files.length > 0) {
+            fileUploadText.text(`${files.length} file(s) chosen`);
+            $('#upload-notification-banner').show();
+            setTimeout(() => {
+                $('#upload-notification-banner').hide();
+            }, 2500);
+        } else {
+            fileUploadText.text('No files chosen');
+        }
     });
 });
