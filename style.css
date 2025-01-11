@@ -1118,7 +1118,7 @@ input[type="file"] {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: none;
     color: #8B3DC3;
     font-size: 16px;
     transition: background-color 0.3s;
