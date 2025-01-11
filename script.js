@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .finally(() => {
             // Navigate to the next screen regardless of the fetch result
-            window.location.href = 'screens/store-onboard-add-physical-products.html';
+            window.location.href = '../screens/store-onboard-add-physical-products.html';
         });
     });
 });
