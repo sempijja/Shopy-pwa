@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const addedPoducts = document.getElementById('selected-businesses-confirm');
     if (addedPoducts) {
         addedPoducts.addEventListener('click', function() {
-        window.location.href = '/screens/store-onboard-add-payments.html'; // target HTML file
+        window.location.href = './screens/store-onboard-add-payments.html'; // target HTML file
       });
     } else {
       console.error('Element with ID "added-product-onboarding-screen" not found.');
