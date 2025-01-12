@@ -17,8 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Element with ID "whatsapp-button" not found.');
     }
+
+    const addedPoducts = document.getElementById('added-product-onboarding-screen');
+    if (addedPoducts) {
+        addedPoducts.addEventListener('click', function() {
+        window.location.href = '../screens/store-onboard-add-payments.html'; // target HTML file
+      });
+    } else {
+      console.error('Element with ID "added-product-onboarding-screen" not found.');
+    }
   });
 
+
+
+
+
+  
+//code for selecting products (which industry do you belong to)
 document.addEventListener('DOMContentLoaded', () => {
     // Select all elements with the class 'carousel-button'
     const carouselButtons = document.querySelectorAll('.carousel-button');
@@ -57,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add click event listener to the "Continue" button
-    const continueButton = document.getElementById('selected-businesses');
+    const continueButton = document.getElementById('selected-businesses-confirm');
     continueButton.addEventListener('click', () => {
         // Get the selected options
         const selectedOptions = selectedButtons.map(button => button.querySelector('.carousel-button-label p').innerText);

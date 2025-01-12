@@ -23,7 +23,7 @@
                 <div class="step completed">
                     <div class="circle">2</div>
                 </div>
-                <div class="step">
+                <div class="step completed">
                     <div class="circle">3</div>
                 </div>
                 <div class="step">
@@ -34,54 +34,64 @@
                 </div>
             </div>
             <!--Progress steps component end-->
-            <h4 style="display: flex;
-            padding: 0px;
-            justify-content: center;
-            align-items: flex-end;
-            align-self: stretch;">
-            Add your payment methods</h4>
-            
+            <h4>Add your payment methods</h4>
+            <p>Customers will choose one of the following payment methods to make payment</p>            
         </div>
 
-        <div class="form-number">
-                        <!--Inputs-->
-            <label for="product type" class="form-label">Which type of product is this</label>
-            <select title="Product type" name="product-type" id="product-type">
-                <option value="physical product">Physical product</option>
-                <option value="digital product">Digital product</option>
-            </select>
+        <div class="payment-methods">
 
-            <label for="Product name" class="form-label">Product name</label>
-            <input title="Product name" type="text" class="text-input" placeholder="Enter your product name name (e.g., Nike Airforce 1)">
+            <div class="payment-option">
+                <div class="payment-icon-and-label">
+                <div class="payment-icon">
+                    <img src="../assests/images/airtel-logo.jpg" alt="">
+                </div>
+                <span class="payment-label"> Airtel money</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
 
-            <label for="Product price" class="form-label">Price</label>
-            <input title="Product price" type="number" class="text-input" placeholder="Enter your product price (e.g., 1,000)">
+            <div class="payment-option">
+                <div class="payment-icon-and-label">
+                <div class="payment-icon">
+                    <img src="../assests/images/mtn-logo.jpg" alt="">
+                </div>
+                <span class="payment-label"> MTN momo</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
 
-            <label for="Stock quantity" class="form-label">Quantity</label>
-            <input title="Stock quantity" type="number" class="text-input" placeholder="Quantity in stock (e.g., 20)">
+            <div class="payment-option">
+                <div class="payment-icon-and-label">
+                <div class="payment-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>                </div>
+                <span class="payment-label"> Bank transfer</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
 
-            <label for="Product description" class="form-label">Description</label>
-            <textarea title="Product description" class="text-input" placeholder="A short description about this product" maxlength="200" rows="4" style="width: 100%;"></textarea>
+            <div class="payment-option">
+                <div class="payment-icon-and-label">
+                <div class="payment-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>                </div>
+                <span class="payment-label"> Cash on delivery</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
 
-
-            <section class="store-onboard-industry">
-                <section class="upload-product-image-section">
-                    <h3>Add some photos of this product</h3>
-                    <h4>Upload atleast one photo to start with</h4>
-
-                    <div class="file-upload-wrapper">
-                        <input type="file" id="product-image-upload" accept="image/*" multiple>
-                        <label for="product-image-upload" class="custom-file-upload">
-                            Select images
-                        </label>
-                        <span id="file-uplaod-text"></span>
-                        <div id="image-preview-container"></div>
-                    </div>
-                    <div id="upload-notification-banner" class="notification-banner">Photos uploaded successfully</div>
-                </section>
-            </section>
-            <button id="selected-businesses">Continue</button>
-        </div>
+          </div>
+          <button id="added-product-onboarding-screen" class="sticky-button">Continue</button>
     </div>
 
     <script src="../script.js"></script>
