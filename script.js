@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Element with ID "whatsapp-button" not found.');
     }
 
-    const addedPoducts = document.getElementById('added-product-onboarding-screen');
+    const addedPoducts = document.getElementById('selected-businesses-confirm');
     if (addedPoducts) {
         addedPoducts.addEventListener('click', function() {
         window.location.href = '../screens/store-onboard-add-payments.html'; // target HTML file
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add click event listener to the "Continue" button
-    const continueButton = document.getElementById('selected-businesses-confirm');
+    const continueButton = document.getElementById('selected-businesses');
     continueButton.addEventListener('click', () => {
         // Get the selected options
         const selectedOptions = selectedButtons.map(button => button.querySelector('.carousel-button-label p').innerText);
