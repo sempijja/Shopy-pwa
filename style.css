@@ -1348,7 +1348,6 @@ input[type="file"] {
     align-items: center;
     align-self: stretch;
     justify-content: center;
-    outline: 1px solid red !important;
   }
   
   .payment-option:last-child {
