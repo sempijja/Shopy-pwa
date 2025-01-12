@@ -1,3 +1,24 @@
+//code for naviagting between screens 
+document.addEventListener('DOMContentLoaded', function() {
+    const setupStoreButton = document.getElementById('setup-store-button');
+    if (setupStoreButton) {
+      setupStoreButton.addEventListener('click', function() {
+        window.location.href = 'store-onboard-about-business.html'; // target HTML file
+      });
+    } else {
+      console.error('Element with ID "setup-store-button" not found.');
+    }
+  
+    const whatsappButton = document.getElementById('whatsapp-button');
+    if (whatsappButton) {
+      whatsappButton.addEventListener('click', function() {
+        window.location.href = 'screens/add-number-whatsapp.html'; // target HTML file
+      });
+    } else {
+      console.error('Element with ID "whatsapp-button" not found.');
+    }
+  });
+
 document.addEventListener('DOMContentLoaded', () => {
     // Select all elements with the class 'carousel-button'
     const carouselButtons = document.querySelectorAll('.carousel-button');
@@ -78,7 +99,7 @@ $(document).ready(function() {
         const fileUploadText = $('#file-upload-text');
         previewContainer.empty(); // Clear previous previews
 
-        if (files.length > 5) {
+        if (files.length > 6) {
             alert('You can only upload a maximum of 5 images.');
             return;
         }
@@ -103,6 +124,29 @@ $(document).ready(function() {
             }, 2500);
         } else {
             fileUploadText.text('No files chosen');
+        }
+    });
+});
+
+// Coe that updates the product type based on if a user selects digital product or physical product
+document.addEventListener('DOMContentLoaded', () => {
+    const productTypeSelect = document.getElementById('product-type');
+    const stockQuantityLabel = document.querySelector('label[for="Stock quantity"]');
+    const stockQuantityInput = document.querySelector('input[title="Stock quantity"]');
+
+    productTypeSelect.addEventListener('change', (event) => {
+        if (event.target.value === 'digital product') {
+            stockQuantityLabel.textContent = 'Download link';
+            stockQuantityLabel.setAttribute('for', 'Download link');
+            stockQuantityInput.setAttribute('title', 'Download link');
+            stockQuantityInput.setAttribute('type', 'url');
+            stockQuantityInput.setAttribute('placeholder', 'https://example.com');
+        } else {
+            stockQuantityLabel.textContent = 'Quantity';
+            stockQuantityLabel.setAttribute('for', 'Stock quantity');
+            stockQuantityInput.setAttribute('title', 'Stock quantity');
+            stockQuantityInput.setAttribute('type', 'number');
+            stockQuantityInput.setAttribute('placeholder', 'Quantity in stock (e.g., 20)');
         }
     });
 });

@@ -1089,11 +1089,18 @@ select:focus {
 
   /* Image preview  */
   .image-preview {
-    width: 100px;
-    height: 100px;
+    width: 100PX;
+    height: 100PX;
     margin: 5px;
     object-fit: cover;
-    background-color: red;
+    border-radius: 12px;
+}
+
+#image-preview-container {
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .file-upload-wrapper {
@@ -1103,8 +1110,8 @@ select:focus {
     align-items: flex-start;
     gap: 10px;
     align-self: stretch;
-    border-radius: var(--Corner-radius-80, 8px);
-    border: 4px dashed var(--Neutral-Stroke-1-Rest, #D1D1D1);
+    border-radius: var(--Corner-radius-80, 24px);
+    border: 5px dashed var(--Neutral-Stroke-1-Rest, #D1D1D1);
     background: var(--Neutral-Background-4-Rest, #FAFAFA);
 }
 
@@ -1215,7 +1222,7 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 4px;
     flex: 1 0 0;
     align-self: stretch;
 }
