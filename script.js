@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const setupStoreButton = document.getElementById('setup-store-button');
     if (setupStoreButton) {
       setupStoreButton.addEventListener('click', function() {
-        window.location.href = 'store-onboard-about-business.html'; // target HTML file
+        window.location.href = 'store-onboard-about-business.html'; // From "welcome to shopy screen" to adding business details
       });
     } else {
       console.error('Element with ID "setup-store-button" not found.');
@@ -12,24 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const whatsappButton = document.getElementById('whatsapp-button');
     if (whatsappButton) {
       whatsappButton.addEventListener('click', function() {
-        window.location.href = 'screens/add-number-whatsapp.html'; // target HTML file
+        window.location.href = 'screens/add-number-whatsapp.html'; // Continue with whatsapp screen to adding phone number
       });
     } else {
       console.error('Element with ID "whatsapp-button" not found.');
     }
 
-    const selectedBusiness = document.getElementById('selected-businesses-confirm');
-    if (selectedBusiness) {
-        selectedBusiness.addEventListener('click', function() {
-        window.location.href = '/screens/store-onboard-add-physical-products.html'; // target HTML file
+    const productDetails = document.getElementById('added-product-onboarding-screen');
+    if (productDetails) {
+        productDetails.addEventListener('click', function() {
+        window.location.href = '/screens/store-onboard-add-payments.html'; // From adding product details to adding payment methods
       });
     } else {
       console.error('Element with ID "selected-businesses-confirm" not found.');
     }
   });
-
-
-
 
 
   
@@ -72,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add click event listener to the "Continue" button
-    const continueButton = document.getElementById('selected-businesses');
+    const continueButton = document.getElementById('selected-businesses-confirm');
     continueButton.addEventListener('click', () => {
         // Get the selected options
         const selectedOptions = selectedButtons.map(button => button.querySelector('.carousel-button-label p').innerText);
@@ -91,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .finally(() => {
             // Navigate to the next screen regardless of the fetch result
-            window.location.href = '../screens/store-onboard-add-physical-products.html';
+            window.location.href = '/screens/store-onboard-add-physical-products.html';
         });
     });
 });
@@ -115,7 +112,7 @@ $(document).ready(function() {
         previewContainer.empty(); // Clear previous previews
 
         if (files.length > 6) {
-            alert('You can only upload a maximum of 5 images.');
+            alert('You can only upload a maximum of 6 images.');
             return;
         }
 
@@ -143,7 +140,7 @@ $(document).ready(function() {
     });
 });
 
-// Coe that updates the product type based on if a user selects digital product or physical product
+// Code that updates the product type based on if a user selects digital product or physical product
 document.addEventListener('DOMContentLoaded', () => {
     const productTypeSelect = document.getElementById('product-type');
     const stockQuantityLabel = document.querySelector('label[for="Stock quantity"]');
