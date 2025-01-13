@@ -27,21 +27,11 @@
     </div>
 
     <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('../service-worker.js').then(registration => {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, error => {
-              console.log('ServiceWorker registration failed: ', error);
-            });
-          });
-        }
         // function to navigate to next page on click
         document.getElementById('verify-number').addEventListener('click', function() {
       window.location.href = '../screens/number-whatsapp-verify.html'; // target HTML file
   });
     </script>
-    <script src="../navigation.js"></script>
     <script src="../script.js"></script>
 </body>
 </html>

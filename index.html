@@ -36,15 +36,21 @@
 
     
     <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js').then(registration => {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, error => {
-              console.log('ServiceWorker registration failed: ', error);
+if ('serviceWorker' in navigator) {
+    // Check if the browser supports service workers
+    window.addEventListener('load', () => {
+        // Register the service worker after the page has fully loaded
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+                // Registration failed
+                console.log('ServiceWorker registration failed: ', error);
             });
-          });
-        }
+    });
+}
       </script>
       <script src="script.js"></script>
       

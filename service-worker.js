@@ -6,7 +6,6 @@ self.addEventListener('install', event => {
         '/',
         '/index.html',
         '/manifest.json',
-        '/assets/images/Radiant Smile in Black and White.jpeg',
         // Add other assets you want to cache
       ]);
     })
