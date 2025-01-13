@@ -18,10 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Element with ID "whatsapp-button" not found.');
     }
 
+<<<<<<< HEAD
     const selectedBusiness = document.getElementById('selected-businesses-confirm');
     if (selectedBusiness) {
         selectedBusiness.addEventListener('click', function() {
         window.location.href = '/screens/store-onboard-add-physical-products.html'; // target HTML file
+=======
+    const addedPoducts = document.getElementById('selected-businesses-confirm');
+    if (addedPoducts) {
+        addedPoducts.addEventListener('click', function() {
+        window.location.href = './screens/store-onboard-add-payments.html'; // target HTML file
+>>>>>>> 766c2ebdd6c073be0656c91b4c0dde63a380420f
       });
     } else {
       console.error('Element with ID "selected-businesses-confirm" not found.');
