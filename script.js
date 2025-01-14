@@ -24,6 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '/screens/store-onboard-add-payments.html'; // From adding product details to adding payment methods
       });
     } else {
+      console.error('Element with ID "added-product-onboarding-screen" not found.');
+    }
+
+    const paymentDetails = document.getElementById('added-payments-onboarding');
+    if (paymentDetails) {
+        paymentDetails.addEventListener('click', function() {
+        window.location.href = '../screens/store-onboard-add-socials.html'; // From adding product details to adding payment methods
+      });
+    } else {
       console.error('Element with ID "selected-businesses-confirm" not found.');
     }
 
@@ -110,10 +119,12 @@ $(document).ready(function() {
         const files = event.target.files;
         const previewContainer = $('#image-preview-container');
         const fileUploadText = $('#file-upload-text');
-        previewContainer.empty(); // Clear previous previews
+        const existingImages = previewContainer.children('img').length;
 
-        if (files.length > 6) {
-            alert('You can only upload a maximum of 6 images.');
+        // Do not clear previous previews
+
+        if (files.length > 5 || existingImages + files.length > 5) {
+            alert('You can only upload a maximum of 5 images.');
             return;
         }
 
@@ -141,7 +152,7 @@ $(document).ready(function() {
     });
 });
 
-// Code that updates the product type based on if a user selects digital product or physical product
+// Updting the product type based on if a user selects digital product or physical product
 document.addEventListener('DOMContentLoaded', () => {
     const productTypeSelect = document.getElementById('product-type');
     const stockQuantityLabel = document.querySelector('label[for="Stock quantity"]');
