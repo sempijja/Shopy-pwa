@@ -123,8 +123,8 @@ $(document).ready(function() {
 
         // Do not clear previous previews
 
-        if (files.length > 5 || existingImages + files.length > 5) {
-            alert('You can only upload a maximum of 5 images.');
+        if (files.length > 6 || existingImages + files.length > 6) {
+            alert('You can only upload a maximum of 6 images.');
             return;
         }
 
