@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productDetails = document.getElementById('added-product-onboarding-screen');
     if (productDetails) {
         productDetails.addEventListener('click', function() {
-        window.location.href = '/screens/store-onboard-add-payments.html'; // From adding product details to adding payment methods
+        window.location.href = './screens/store-onboard-add-payments.html'; // From adding product details to adding payment methods
       });
     } else {
       console.error('Element with ID "added-product-onboarding-screen" not found.');
