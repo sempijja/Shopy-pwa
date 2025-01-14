@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const paymentDetails = document.getElementById('added-payments-onboarding');
     if (paymentDetails) {
         paymentDetails.addEventListener('click', function() {
-        window.location.href = '../screens/store-onboard-add-socials.html'; // From adding product details to adding payment methods
+        window.location.href = '../screens/store-onboard-add-socials.html'; // From adding payment details to adding social media
       });
     } else {
       console.error('Element with ID "selected-businesses-confirm" not found.');
