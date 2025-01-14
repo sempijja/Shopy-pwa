@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Element with ID "selected-businesses-confirm" not found.');
     }
+
   });
 
 
