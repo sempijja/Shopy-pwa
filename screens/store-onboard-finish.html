@@ -26,7 +26,7 @@
                 Your store is  <span style="color: var(--Brand-Foreground-1-Rest, #8B3DC3);">successfully</span> 
                 set-up🎉
             </h1>
-            <div class="store-qr-code">
+            <div id="store-qr-code-container"  class="store-qr-code">
                 <img  src="../assests/images/store-qr-code.jpg" alt="Illustration">
             </div>
             <div>
@@ -49,5 +49,18 @@
     </div>
 
     <script src="../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('onboard-finish-last-screen').addEventListener('click', function() {
+            const qrCodeContainer = document.getElementById('store-qr-code-container');
+
+            html2canvas(qrCodeContainer).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'store-qr-code.png';
+                link.click();
+            });
+        });
+    </script>
 </body>
 </html>
