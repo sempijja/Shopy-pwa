@@ -45,6 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Element with ID "added-socials-onboarding" not found.');
     }
 
+    const deliveryDetails = document.getElementById('onboarding-end');
+    if (deliveryDetails) {
+        deliveryDetails.addEventListener('click', function() {
+        window.location.href = '../screens/store-onboard-finish.html' ; // From adding delivery details to last onbioarding screen
+      });
+    } else {
+      console.error('Element with ID "onboarding-end" not found.');
+    }
+
   });
 
 
