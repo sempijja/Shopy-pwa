@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../favicon_io/site.webmanifest">
+</head>
+<body>
+    <div class="container-onboard">
+        <div class="progress-steps-container">
+            <!--Progress steps component start-->
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="circle">1</div>
+                </div>
+                <div class="step completed">
+                    <div class="circle">2</div>
+                </div>
+                <div class="step completed">
+                    <div class="circle">3</div>
+                </div>
+                <div class="step  completed">
+                    <div class="circle">4</div>
+                </div>
+                <div class="step completed">
+                    <div class="circle">5</div>
+                </div>
+            </div>
+            <!--Progress steps component end-->
+            <h4>Optimize your store’s logistics by adding a delivery option</h4>
+            <p>Customers will choose one of the following delivery options to recieve their orders.</p>            
+        </div>
+
+        <div class="payment-methods">
+
+            <div class="payment-option">
+                <div class="payment-icon-and-label">
+                <div class="payment-icon">
+                    <img src="../assests/images/uber.jpg" alt="">
+                </div>
+                <span style="flex-direction: column;" class="payment-label"> Deliver using Uber
+                    <p style="text-align: left; margin: 0px;">We connect your orders to an Uber bike for delivery</p>
+                </span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <div class="payment-option">
+                <div class="payment-icon-and-label">
+                <div class="payment-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>            </div>
+                <span style="flex-direction: column;" class="payment-label"> We deliver ourselves
+                    <p style="text-align: left; margin: 0px;">Select this if you have a person that 
+                        does deliveries on behalf of the store</p>
+                </span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+
+            <div  class="payment-option">
+                <div class="payment-icon-and-label">
+                <div  class="payment-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>                               </div>
+            <span style="flex-direction: column;" class="payment-label"> Self pick-up
+                    <p style="text-align: left; margin: 0px;">Your customers can pick up goods
+                        themselves. They will be given numbers to present at pick-up</p>
+                </span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+          </div>
+          <button id="added-payments-onboarding" class="sticky-button">Continue</button>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

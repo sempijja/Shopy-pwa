@@ -896,6 +896,7 @@
     scroll-behavior: smooth;
     background-color: var(--neutral-background-1-rest, #FFFFFF);
     outline: 0px solid red !important; 
+    
 }
 
 html, body {
@@ -1380,9 +1381,9 @@ input[type="file"] {
   
   .payment-label {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: row-reverse;
     align-self: stretch;
+    align-content: flex-start;
     color: var(--Neutral-Foreground-1-Rest, #242424);
     font-family: "SF Pro Text";
     font-size: 17px;
@@ -1390,6 +1391,7 @@ input[type="file"] {
     font-weight: 400;
     line-height: 22px; /* 129.412% */
     letter-spacing: -0.43px;
+    text-align: left;
   }
   
   .switch {
