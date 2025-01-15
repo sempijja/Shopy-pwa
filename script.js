@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Element with ID "selected-businesses-confirm" not found.');
     }
 
+    const socialsDetails = document.getElementById('added-socials-onboarding');
+    if (socialsDetails) {
+        socialsDetails.addEventListener('click', function() {
+        window.location.href = '../screens/store-onbaord-add-delivery-option.html' ; // From adding payment details to adding social media
+      });
+    } else {
+      console.error('Element with ID "added-socials-onboarding" not found.');
+    }
+
   });
 
 

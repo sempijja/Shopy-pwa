@@ -1010,6 +1010,17 @@ button {
     color: #8B3DC3; /* Set the text color to match the border */
 }
 
+.subtle-button{
+  display: inline-flex;
+  height: 50px;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: none;
+  color: var(--Brand-Foreground-1-Pressed, #5D1192);
+}
+
 img {
   width: 100%;
   height: auto;
@@ -1484,6 +1495,17 @@ input[type="file"] {
     align-self: stretch;
   }
 
+/*fiinal onbaording scvreen*/
+.store-qr-code{
+  display: flex;
+  height: 290px;
+  padding: 8px 24px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
 
 @keyframes slideDown {
     from {
