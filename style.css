@@ -1499,11 +1499,10 @@ input[type="file"] {
 .store-qr-code{
   display: flex;
   height: 290px;
-  padding: 8px 24px;
+  padding: 8px 8px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
   align-self: stretch;
 }
 
