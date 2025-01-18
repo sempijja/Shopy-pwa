@@ -896,6 +896,7 @@
     scroll-behavior: smooth;
     background-color: var(--neutral-background-1-rest, #FFFFFF);
     outline: 0px solid red !important; 
+    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     
 }
 
@@ -903,7 +904,6 @@ html, body {
     margin: 0;
     padding: 4px;
     text-align: center;
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
@@ -917,7 +917,6 @@ html, body {
 
 h1, h2, h3, h4 {
     text-align: center;
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
 }
 
 p{
@@ -954,7 +953,6 @@ h2 {
 h3{
     color: #242424;
     text-align: center;
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
@@ -965,7 +963,6 @@ h3{
 h4{
     color: #242424;
     text-align: center;
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
@@ -1034,7 +1031,6 @@ select{
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     outline: none;
     transition: 0.3s;
 }
@@ -1191,7 +1187,6 @@ input[type="file"] {
     border-bottom: 1.5px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     outline: none;
     transition: 0.3s;
 
@@ -1306,9 +1301,6 @@ input[type="file"] {
 .carousel-button-label p {
     color: var(--Neutral-Foreground-1-Rest, #242424);
     text-align: center;
-    
-    /* iOS/Caption 2 */
-    font-family: "SF Pro Display", "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -1505,6 +1497,44 @@ input[type="file"] {
   align-items: center;
   align-self: stretch;
 }
+
+/* home screen components */
+.store-name-and-avatar{
+  display: flex;
+  height: 48px;
+  align-items: center;
+  align-self: stretch;
+}
+
+.store-name-and-avatar-left{
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 12px;
+  flex: 1 0 0;
+}
+
+
+.store-name-and-avatar-right{
+  display: flex;
+  padding-right: 0px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.homescreen-content-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
 
 @keyframes slideDown {
     from {
