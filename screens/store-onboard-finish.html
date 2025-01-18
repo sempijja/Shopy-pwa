@@ -40,7 +40,7 @@
         </div>
 
         <div class="onboard-buttons">
-            <button id="onboard-finish-last-screen" class="google-button">
+            <button id="download-qr-code" class="google-button">
                 Download QR code
             </button>
             <button id="onboard-finish-last-screen" class="secondary-button">
@@ -53,7 +53,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
         document.getElementById('onboard-finish-last-screen').addEventListener('click', function() {
-            const qrCodeContainer = document.getElementById('store-qr-code-container');
+            const qrCodeContainer = document.getElementById('download-qr-code');
 
             html2canvas(qrCodeContainer).then(canvas => {
                 const link = document.createElement('a');
