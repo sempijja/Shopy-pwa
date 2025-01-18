@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '../screens/store-onboard-add-socials.html'; // From adding payment details to adding social media
       });
     } else {
-      console.error('Element with ID "selected-businesses-confirm" not found.');
+      console.error('Element with ID "added-payments-onboarding" not found.');
     }
 
     const socialsDetails = document.getElementById('added-socials-onboarding');
@@ -52,6 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     } else {
       console.error('Element with ID "onboarding-end" not found.');
+    }
+
+    const finishOnboarding = document.getElementById('onboard-finish-last-screen');
+    if (finishOnboarding) {
+        finishOnboarding.addEventListener('click', function() {
+        window.location.href = '../screens/home-screen.html' ; // From final onbaording screen to home screen
+      });
+    } else {
+      console.error('Element with ID "onboard-finish-last-screen" not found.');
     }
 
   });

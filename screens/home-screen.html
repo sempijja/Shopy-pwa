@@ -13,7 +13,7 @@
     <link rel="manifest" href="../favicon_io/site.webmanifest">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {packages: ['corechart', 'line']});
+      google.charts.load('current', {packages: ['corechart', 'controls', 'line']});
 google.charts.setOnLoadCallback(drawLineColors);
 
 function drawLineColors() {
@@ -23,7 +23,7 @@ function drawLineColors() {
       data.addColumn('number', 'Shirts');
 
       data.addRows([
-        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [0, 10, 80],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
         [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
         [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
         [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
@@ -44,7 +44,13 @@ function drawLineColors() {
         vAxis: {
           title: 'Sales'
         },
-        colors: ['#a52714', '#097138']
+        curveType: 'function',
+        colors: ['#a52714', '#097138'],
+        animation: {
+          startup: true,
+          duration: 1000,
+          easing: 'out'
+        }
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -52,7 +58,6 @@ function drawLineColors() {
     }
     </script>
     
-
 </head>
 
 <body>
@@ -70,7 +75,7 @@ function drawLineColors() {
                        </div>
                     </div>
                 </div>
-                <div class="store-name-and-avatar-right">
+                <div class="store-name-and-avatar-right" id="filter_div">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>                  
                 </div>
             </section>
@@ -102,7 +107,7 @@ function drawLineColors() {
                                     gap: 4px;
                                     align-self: stretch;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>                            
-                                      <span class="payment-label" style="align-items: center;"> <h2>30,000</h2> 
+                                      <span class="payment-label" style="align-items: center;"> <h2>300</h2> 
                                     
                                     </span>  </div>
 
@@ -114,7 +119,9 @@ function drawLineColors() {
                         align-items: center;
                         gap: 4px;
                         align-self: stretch;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E700E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up"><path d="M8 6L12 2L16 6"/><path d="M12 2V22"/></svg>                       <span class="payment-label" style="align-items: center;"> <h2>30,000</h2> </span>  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E700E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up"><path d="M8 6L12 2L16 6"/><path d="M12 2V22"/></svg>                      
+                         <span class="payment-label" style="align-items: center;"> <h2>100,000</h2> 
+                        </span>  
                         </div>
                     </div>
                 </div>
