@@ -1536,6 +1536,48 @@ input[type="file"] {
 }
 
 
+
+/* The small filter ontop of thesale and orders to filter  the results between days, months  */
+.datefiltercontainer{
+  display: flex;
+  padding: 4px 0px;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1 0 0;
+  width: 100%;
+}
+
+.date-filter{
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary-and-datefilter{
+  display: flex;
+  padding: 4px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.sales-and-orders-summary{
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.sales-summary{
+  display: flex;
+  padding: 8px 0px 12px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 0 0;
+}
+
+
 @keyframes slideDown {
     from {
         top: -50px;
