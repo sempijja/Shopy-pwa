@@ -11,7 +11,50 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
     <link rel="manifest" href="../favicon_io/site.webmanifest">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawLineColors);
+
+function drawLineColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Shoes');
+      data.addColumn('number', 'Shirts');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Sales'
+        },
+        colors: ['#a52714', '#097138']
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      chart.draw(data, options);
+    }
+    </script>
+    
+
 </head>
+
 <body>
     <div class="container-onboard" style="gap: 0px;">
         <div class="progress-steps-container">
@@ -20,8 +63,7 @@
                 <div class="store-name-and-avatar-left">
                     <div class="payment-option">
                         <div class="payment-icon-and-label ">
-                        <div class="payment-icon" style="border-radius: 0px; width: auto; gap: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg>            
+                        <div class="payment-icon" style="width: auto; gap: 16px; align-content: center;">                            
                             <span class="payment-label" style="align-items: center;"> 
                                 <h3 style="align-items: center;"> Test store</h2>
                             </span>
@@ -29,17 +71,17 @@
                     </div>
                 </div>
                 <div class="store-name-and-avatar-right">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>              
-                  </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>                  
+                </div>
             </section>
         </div>
 
                     <!--Section conatains the filters, graphs adn all conetent in the middle part in figma-->
         <section class="homescreen-content-container">
 
-            <section class="summary-and-datefilter">
+         <section class="summary-and-datefilter">
 
-            <!--The smnall filter ontop of the sale and orders to filter  the results between days, months-->
+                <!--The smnall filter ontop of the sale and orders to filter  the results between days, months-->
                 <div class="datefiltercontainer">
                     <div class="date-filter">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M17 14h-6"/><path d="M13 18H7"/><path d="M7 14h.01"/><path d="M17 18h.01"/></svg>
@@ -47,21 +89,25 @@
                             <p>Last seven days</p>
                         </span>   
                     </div>
-                </div>
 
-            <!--sales and orders numbers-->
-                <div class="sales-and-orders-summary">
+                  </div>
 
-                    <div class="sales-summary">
-                        <p style="margin: 0px;">Sales</p>
-                        <div style="display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        align-self: stretch;">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>                            
-                       <span class="payment-label" style="align-items: center;"> <h2>30,000</h2> </span>  
-                        </div>
+                        <!--sales and orders numbers-->
+                        <div class="sales-and-orders-summary">
+
+                           <div class="sales-summary">
+                            <p style="margin: 0px;">Sales</p>
+                                   <div style="display: flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                    align-self: stretch;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>                            
+                                      <span class="payment-label" style="align-items: center;"> <h2>30,000</h2> 
+                                    
+                                    </span>  </div>
+
                     </div>
+
                     <div class="sales-summary">
                         <p style="margin: 0px;">Orders</p>
                         <div style="display: flex;
@@ -72,9 +118,12 @@
                         </div>
                     </div>
                 </div>
-
             </section>
-            
+
+            <section class="sales-graph">  
+                <div id="curve_chart" style="width: 100%; height: 100%"></div>
+            </section>
+
         </section>
 
         <button id="added-product-onboarding-screen" class="sticky-button">Continue</button>
