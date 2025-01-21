@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
     <link rel="manifest" href="../favicon_io/site.webmanifest">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <script type="text/javascript">
       google.charts.load('current', {packages: ['corechart', 'controls', 'line']});
 google.charts.setOnLoadCallback(drawLineColors);
@@ -68,7 +69,7 @@ function drawLineColors() {
                 <div class="store-name-and-avatar-left">
                     <div class="payment-option">
                         <div class="payment-icon-and-label ">
-                        <div class="payment-icon" style="width: auto; gap: 16px; align-content: center;">                            
+                        <div class="payment-icon" style="width: auto; gap: 16px; align-content: center; border-radius: 0px;">                            
                             <span class="payment-label" style="align-items: center;"> 
                                 <h3 style="align-items: center;"> Test store</h2>
                             </span>
@@ -127,14 +128,41 @@ function drawLineColors() {
                 </div>
             </section>
 
-            <section class="sales-graph">  
-                <div id="curve_chart" style="width: 100%; height: 100%"></div>
+            <section class="sales-graph"> 
+               <!--removed the t from the end of the div fot the chart to ease debugging add it after-->
+                <div id="curve_char" style="width: 100%; height: 100%"></div>
             </section>
 
+          <section> 
+
+            <!--sales and top products sold summary-->
+            <section class="store-name-and-avatar" style="outline: 1px solid red !important; width: 100%: flex; height: 3rem; padding-bottom: 0.5rem; justify-content: space-between; align-items: flex-end; align-self: stretch;" >
+              <div class="store-name-and-avatar-left">
+                  <div class="payment-option">
+                      <div class="payment-icon-and-label ">
+                      <div class="payment-icon" style="width: auto; gap: 16px; align-content: center; border-radius: 0px;">                            
+                          <span class="payment-label" style="align-items: center;"> 
+                              <h5 style="align-items: center;"> Sales summary</h5>
+                          </span>
+                     </div>
+                  </div>
+              </div>
+              <div class="store-name-and-avatar-right" id="filter_div">
+                <span class="payment-label" style="align-items: center;"> 
+                  <p>Expand</p>
+              </span>   
+              </div>
+          </section>
         </section>
 
-        <button id="added-product-onboarding-screen" class="sticky-button">Continue</button>
+
+
+
+
+        <button id="added-product-onboarding-screen" class="sticky-button">Continue here</button>
+
     </div>
+
 
     <script src="../script.js"></script>
 </body>
