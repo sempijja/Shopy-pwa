@@ -103,10 +103,7 @@ function drawLineColors() {
 
                            <div class="sales-summary">
                             <p style="margin: 0px;">Sales</p>
-                                   <div style="display: flex;
-                                    align-items: center;
-                                    gap: 4px;
-                                    align-self: stretch;">
+                                   <div style="display: flex; align-items: center; gap: 4px; align-self: stretch;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>                            
                                       <span class="payment-label" style="align-items: center;"> <h2>300</h2> 
                                     
@@ -116,10 +113,7 @@ function drawLineColors() {
 
                     <div class="sales-summary">
                         <p style="margin: 0px;">Orders</p>
-                        <div style="display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        align-self: stretch;">
+                        <div style="display: flex; align-items: center; gap: 4px; align-self: stretch;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E700E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up"><path d="M8 6L12 2L16 6"/><path d="M12 2V22"/></svg>                      
                          <span class="payment-label" style="align-items: center;"> <h2>100,000</h2> 
                         </span>  
@@ -128,15 +122,14 @@ function drawLineColors() {
                 </div>
             </section>
 
+               <!--Section holdig the graph-->
             <section class="sales-graph"> 
-               <!--removed the t from the end of the div fot the chart to ease debugging add it after-->
-                <div id="curve_char" style="width: 100%; height: 100%"></div>
+                <div id="curve_chart" style="width: 100%; height: 100%"></div>
             </section>
 
           <section> 
-
             <!--sales and top products sold summary-->
-            <section class="store-name-and-avatar" style="outline: 1px solid red !important; width: 100%: flex; height: 3rem; padding-bottom: 0.5rem; justify-content: space-between; align-items: flex-end; align-self: stretch;" >
+            <section class="store-name-and-avatar" style="flex; height: 3rem; padding-bottom: 0.5rem; justify-content: space-between; align-items: flex-end; align-self: stretch;" >
               <div class="store-name-and-avatar-left">
                   <div class="payment-option">
                       <div class="payment-icon-and-label ">
@@ -147,20 +140,95 @@ function drawLineColors() {
                      </div>
                   </div>
               </div>
+
               <div class="store-name-and-avatar-right" id="filter_div">
-                <span class="payment-label" style="align-items: center;"> 
-                  <p>Expand</p>
+                <span class="payment-label" style="align-items: center; "> 
+                  <p style="color: var(--Brand-Foreground-1-Rest, #8B3DC3);">Expand</p> 
               </span>   
-              </div>
+              </div> 
           </section>
+          <!-- start of The list items-->
+          <div class="one-line-list-item"> 
+            <div class="one-line-list-item-container">
+              <div class="one-line-list-item-container-left">
+                <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Orders</h5>
+              </div>
+              <div class="one-line-list-item-container-right">
+                <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">Value</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="one-line-list-item"> 
+            <div class="one-line-list-item-container">
+              <div class="one-line-list-item-container-left">
+                <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Delivered</h5>
+              </div>
+              <div class="one-line-list-item-container-right">
+                <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">Value</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="one-line-list-item"> 
+            <div class="one-line-list-item-container">
+              <div class="one-line-list-item-container-left">
+                <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Pick-ups</h5>
+              </div>
+              <div class="one-line-list-item-container-right">
+                <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">Value</h5>
+              </div>
+            </div>
+          </div>
+
+
+            <!--Top products sold-->
+          <section class="store-name-and-avatar" style=" height: 3rem; padding-bottom: 0.5rem; justify-content: space-between; align-items: flex-end; align-self: stretch;" >
+            <div class="store-name-and-avatar-left">
+                <div class="payment-option">
+                    <div class="payment-icon-and-label ">
+                    <div class="payment-icon" style="width: auto; gap: 16px; align-content: center; border-radius: 0px;">                            
+                        <span class="payment-label" style="align-items: center;"> 
+                            <h5 style="align-items: center;"> Top products sold</h5>
+                        </span>
+                   </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- start of The list items-->
+        <div class="one-line-list-item"> 
+          <div class="one-line-list-item-container">
+            <div class="one-line-list-item-container-left">
+              <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Product</h5>
+            </div>
+            <div class="one-line-list-item-container-right">
+              <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">Amount</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="one-line-list-item"> 
+          <div class="one-line-list-item-container">
+            <div class="one-line-list-item-container-left">
+              <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Product</h5>
+            </div>
+            <div class="one-line-list-item-container-right">
+              <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">Amount</h5>
+            </div>
+          </div>
+        </div>
+
+
+          
         </section>
 
 
 
 
 
-        <button id="added-product-onboarding-screen" class="sticky-button">Continue here</button>
 
+        
     </div>
 
 
