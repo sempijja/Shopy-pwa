@@ -14,49 +14,44 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <script type="text/javascript">
-      google.charts.load('current', {packages: ['corechart', 'controls', 'line']});
-google.charts.setOnLoadCallback(drawLineColors);
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawChart);
 
-function drawLineColors() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', 'Shoes');
-      data.addColumn('number', 'Shirts');
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            
+            // Add columns
+            data.addColumn('string', 'Day');
+            data.addColumn('number', 'Sales');
+            data.addColumn({type: 'string', role: 'tooltip', p: {html: true}}); // Tooltip for Sales
+            data.addColumn('number', 'Orders');
+            data.addColumn({type: 'string', role: 'tooltip', p: {html: true}}); // Tooltip for Orders
 
-      data.addRows([
-        [0, 10, 80],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
-        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
-        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
-        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
-        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
-        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
-        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
-        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
-        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
-        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
-        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
-        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
-      ]);
+            // Add rows with tooltip text
+            data.addRows([
+                ['Mon', 50, 'Sales: UGX 50,000', 120, 'Orders: 120'],
+                ['Tue', 80, 'Sales: UGX 80,000', 180, 'Orders: 180'],
+                ['Wed', 45, 'Sales: UGX 45,000', 100, 'Orders: 100'],
+                ['Thu', 60, 'Sales: UGX 60,000', 150, 'Orders: 150'],
+                ['Fri', 90, 'Sales: UGX 90,000', 200, 'Orders: 200'],
+                ['Sat', 120, 'Sales: UGX 120,000', 250, 'Orders: 250'],
+                ['Sun', 75, 'Sales: UGX 75,000', 170, 'Orders: 170']
+            ]);
 
-      var options = {
-        hAxis: {
-          title: 'Time'
-        },
-        vAxis: {
-          title: 'Amount (UGX)'
-        },
-        curveType: 'function',
-        colors: ['#a52714', '#097138'],
-        animation: {
-          startup: true,
-          duration: 1000,
-          easing: 'out'
+            var options = {
+                chartArea: {width: '80%', height: '70%'},
+                legend: { position: 'top', alignment: 'end' },
+                colors: ['#800080', '#008000'], // Purple for Sales, Green for Orders
+                hAxis: { title: 'Days of the Week' },
+                vAxis: { title: 'Value (UGX)', format: 'short' },
+                pointSize: 5, // Small point markers
+                curveType: 'function', // Smooth curves
+                tooltip: { isHtml: true } // Enabling custom tooltips
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
         }
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-      chart.draw(data, options);
-    }
     </script>
     
 </head>
@@ -124,7 +119,7 @@ function drawLineColors() {
 
                <!--Section holdig the graph-->
             <section class="sales-graph"> 
-                <div id="curve_chart" style="width: 100%; height: 100%"></div>
+                <div id="chart_div" style="width: 100%; height: 100%"></div>
             </section>
 
           <section> 

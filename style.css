@@ -358,8 +358,8 @@ input[type="file"] {
     align-items: flex-start;
     gap: 12px;
     align-self: stretch;
-    padding: 16px;
-
+    position: sticky;
+    bottom: 0;
 }
 
 .onboard-text{
