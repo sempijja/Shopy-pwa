@@ -53,7 +53,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
         document.getElementById('download-qr-code').addEventListener('click', function() {
-            const qrCodeContainer = document.getElementById('download-qr-code');
+            const qrCodeContainer = document.getElementById('store-qr-code-container');
 
             html2canvas(qrCodeContainer).then(canvas => {
                 const link = document.createElement('a');
