@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0; viewport-fit=cover">
+    <title>Shopy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../favicon_io/site.webmanifest">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            
+            // Add columns
+            data.addColumn('string', 'Day');
+            data.addColumn('number', 'Sales');
+            data.addColumn({type: 'string', role: 'tooltip', p: {html: true}}); // Tooltip for Sales
+            data.addColumn('number', 'Orders');
+            data.addColumn({type: 'string', role: 'tooltip', p: {html: true}}); // Tooltip for Orders
+
+            // Add rows with tooltip text
+            data.addRows([
+                ['Mon', 50, 'Sales: UGX 50,000', 120, 'Orders: 120'],
+                ['Tue', 80, 'Sales: UGX 80,000', 180, 'Orders: 180'],
+                ['Wed', 45, 'Sales: UGX 45,000', 100, 'Orders: 100'],
+                ['Thu', 60, 'Sales: UGX 60,000', 150, 'Orders: 150'],
+                ['Fri', 90, 'Sales: UGX 90,000', 200, 'Orders: 200'],
+                ['Sat', 120, 'Sales: UGX 120,000', 250, 'Orders: 250'],
+                ['Sun', 75, 'Sales: UGX 75,000', 170, 'Orders: 170']
+            ]);
+
+            var options = {
+                chartArea: {width: '80%', height: '70%'},
+                legend: { position: 'top', alignment: 'end' },
+                colors: ['#800080', '#008000'], // Purple for Sales, Green for Orders
+                hAxis: { title: 'Days of the Week' },
+                vAxis: { title: 'Value (UGX)', format: 'short' },
+                pointSize: 5, // Small point markers
+                curveType: 'function', // Smooth curves
+                tooltip: { isHtml: true } // Enabling custom tooltips
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+</head>
+
+<body>
+    <div class="container-onboard" style="gap: 0px;">
+        <div class="progress-steps-container">
+            <!--Progress steps component start-->
+            <section class="store-name-and-avatar">
+                <div class="store-name-and-avatar-left">
+                    <div class="payment-option">
+                        <div class="payment-icon-and-label ">
+                        <div class="payment-icon" style="width: auto; gap: 16px; align-content: center; border-radius: 0px;">                            
+                            <span class="payment-label" style="align-items: center;"> 
+                                <h3 style="align-items: center;"> Test store</h2>
+                            </span>
+                       </div>
+                    </div>
+                </div>
+                <div class="store-name-and-avatar-right" id="filter_div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>                  
+                </div>
+            </section>
+        </div>
+
+                    <!--Section conatains the filters, graphs adn all conetent in the middle part in figma-->
+        <section class="homescreen-content-container">
+
+         <section class="summary-and-datefilter">
+
+                <!--The smnall filter ontop of the sale and orders to filter  the results between days, months-->
+                <div class="datefiltercontainer">
+                    <div class="date-filter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M17 14h-6"/><path d="M13 18H7"/><path d="M7 14h.01"/><path d="M17 18h.01"/></svg>
+                        <span class="payment-label" style="align-items: center;"> 
+                            <p>Last seven days</p>
+                        </span>   
+                    </div>
+
+                  </div>
+
+                        <!--sales and orders numbers-->
+                        <div class="sales-and-orders-summary">
+
+                           <div class="sales-summary">
+                            <p style="margin: 0px;">Sales</p>
+                                   <div style="display: flex; align-items: center; gap: 4px; align-self: stretch;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>                            
+                                      <span class="payment-label" style="align-items: center;"> <h2>300</h2> 
+                                    
+                                    </span>  </div>
+
+                    </div>
+
+                    <div class="sales-summary">
+                        <p style="margin: 0px;">Orders</p>
+                        <div style="display: flex; align-items: center; gap: 4px; align-self: stretch;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E700E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up"><path d="M8 6L12 2L16 6"/><path d="M12 2V22"/></svg>                      
+                         <span class="payment-label" style="align-items: center;"> <h2>100,000</h2> 
+                        </span>  
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+               <!--Section holdig the graph-->
+            <section class="sales-graph"> 
+                <div id="chart_div" style="width: 100%; height: 100%"></div>
+            </section>
+
+          <section> 
+            <!--sales and top products sold summary-->
+            <section class="store-name-and-avatar" style="height: 3rem; padding-bottom: 0.5rem; justify-content: space-between; align-items: flex-end; align-self: stretch;" >
+              <div class="store-name-and-avatar-left">
+                  <div class="payment-option">
+                      <div class="payment-icon-and-label ">
+                      <div class="payment-icon" style="width: auto; gap: 16px; align-content: center; border-radius: 0px;">                            
+                          <span class="payment-label" style="align-items: center;"> 
+                              <h5 style="align-items: center;"> Sales summary</h5>
+                          </span>
+                     </div>
+                  </div>
+              </div>
+
+              <div class="store-name-and-avatar-right" id="filter_div">
+                <span class="payment-label" style="align-items: center; "> 
+                  <p style="color: var(--Brand-Foreground-1-Rest, #8B3DC3);">Expand</p> 
+              </span>   
+              </div> 
+          </section>
+          <!-- start of The list items-->
+          <div class="one-line-list-item"> 
+            <div class="one-line-list-item-container">
+              <div class="one-line-list-item-container-left">
+                <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Orders</h5>
+              </div>
+              <div class="one-line-list-item-container-right">
+                <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">40</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="one-line-list-item"> 
+            <div class="one-line-list-item-container">
+              <div class="one-line-list-item-container-left">
+                <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Delivered</h5>
+              </div>
+              <div class="one-line-list-item-container-right">
+                <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">30</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="one-line-list-item"> 
+            <div class="one-line-list-item-container">
+              <div class="one-line-list-item-container-left">
+                <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Pick-ups</h5>
+              </div>
+              <div class="one-line-list-item-container-right">
+                <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">500</h5>
+              </div>
+            </div>
+          </div>
+
+
+            <!--Top products sold-->
+          <section class="store-name-and-avatar" style=" height: 3rem; padding-bottom: 0.5rem; justify-content: space-between; align-items: flex-end; align-self: stretch;" >
+            <div class="store-name-and-avatar-left">
+                <div class="payment-option">
+                    <div class="payment-icon-and-label ">
+                    <div class="payment-icon" style="width: auto; gap: 16px; align-content: center; border-radius: 0px;">                            
+                        <span class="payment-label" style="align-items: center;"> 
+                            <h5 style="align-items: center;"> Top products sold</h5>
+                        </span>
+                   </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- start of The list items-->
+        <div class="one-line-list-item"> 
+          <div class="one-line-list-item-container">
+            <div class="one-line-list-item-container-left">
+              <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Nike Airforce 1</h5>
+            </div>
+            <div class="one-line-list-item-container-right">
+              <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">50</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="one-line-list-item"> 
+          <div class="one-line-list-item-container">
+            <div class="one-line-list-item-container-left">
+              <h5 style="color: var(--Neutral-Foreground-1-Rest, #242424);">Air Jordans</h5>
+            </div>
+            <div class="one-line-list-item-container-right">
+              <h5 style="color: var(--Neutral-Foreground-2-Rest, #616161); text-align: right;">80</h5>
+            </div>
+          </div>
+        </div>
+
+
+          
+        </section>
+        <!-- Bottom Navigation bar-->
+        <div class="bottom-navbar">
+          <li class="tab-action">
+            <span class="tab-action-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B3DC3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              </svg>
+            </span>
+            <span class="tab-action-name">Home</span>
+          </li>
+
+          <li class="tab-action">
+            <span class="tab-action-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M10 12h11"/><path d="M10 18h11"/><path d="M10 6h11"/><path d="M4 10h2"/><path d="M4 6h1v4"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/>
+              </svg>
+            </span>
+            <span class="tab-action-name">Orders</span>
+          </li>
+
+          <li class="tab-action">
+            <span class="tab-action-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </span>
+            <span class="tab-action-name">Products</span>
+          </li>
+
+          <li class="tab-action">
+            <span class="tab-action-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+              </svg>
+            </span>
+            <span class="tab-action-name">Alerts</span>
+          </li>
+
+          <li class="tab-action">
+            <span class="tab-action-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>
+              </svg>
+            </span>
+            <span class="tab-action-name">Profile</span>
+          </li>
+
+        </div>
+
+
+        
+    </div>
+
+
+    <script src="../script.js"></script>
+</body>
+</html>
